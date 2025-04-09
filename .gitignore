@@ -1,0 +1,12 @@
+*__pycache__
+.vscode
+*.out
+*.pt
+*.safetensors
+*.csv
+*.pyc
+*.out*
+/outputs/
+/output/
+/scripts/outputs/
+/scripts/command.sh
