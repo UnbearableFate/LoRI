@@ -93,9 +93,13 @@ model_archive=/path/to/your/lori-s/safety/adapter
 mask_path=/path/to/your/lori-d/code/adapter/masks/0.9_mask.pt
 ```
 
+## Customizing Base Models and Losses
+
+LoRI supports a variety of base models and loss functions, which can be found in the [`config/model`](https://github.com/juzhengz/LoRI/tree/main/config/model) and [`config/loss`](https://github.com/juzhengz/LoRI/tree/main/config/loss) directories of the repository. To add a new model or loss function, you can simply create a new `.yaml` file in the respective directory. 
+
 ## Acknowledgements
 
-This project builds on the codebase of [dpo-rlaif](https://github.com/architsharma97/dpo-rlaif) and incorporates code from [lottery-ticket-adaptation](https://github.com/kiddyboots216/lottery-ticket-adaptation). We evaluate code generation performance on HumanEval using the [BigCode Evaluation Harness](https://github.com/bigcode-project/bigcode-evaluation-harness).
+This project builds on the codebase of [dpo-rlaif](https://github.com/architsharma97/dpo-rlaif) and incorporates code from [lottery-ticket-adaptation](https://github.com/kiddyboots216/lottery-ticket-adaptation). We evaluate code generation performance on HumanEval using the [bigcode-evaluation-harness](https://github.com/bigcode-project/bigcode-evaluation-harness).
 
 ## Citation
 
