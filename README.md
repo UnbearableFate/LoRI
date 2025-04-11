@@ -6,6 +6,10 @@
 
 LoRI (LoRA with Reduced Interference) is a simple yet effective variant of LoRA for fine-tuning LLMs. It freezes the projection matrices `A` as random projections and sparsifies `B` using task-specific masks. LoRI significantly reduces the number of trainable parameters, preserves single-task performance, and minimizes cross-task interference during adapter merging and continual learning.
 
+<div align="center">
+    <img src="./LoRI.png" alt="LoRI" width="75%">
+</div>
+
 ## Installation
 
 Create and activate a Conda environment:
@@ -74,7 +78,7 @@ Use these scripts to perform continual learning with LoRI:
 
 ### For LoRI-D:
 
-Before running the scripts, set `model_archive` to your trained `LoRI-D` safety adapter, or use the [safety adapter](https://huggingface.co/tomg-group-umd/LoRI-D_safety_llama3_rank_32) from our HuggingFace collection:
+Before running the scripts, set `model_archive` to the path of your trained `LoRI-D` safety adapter, or use the [safety adapter](https://huggingface.co/tomg-group-umd/LoRI-D_safety_llama3_rank_32) from our HuggingFace collection.
 
 ```
 model_archive=/path/to/your/lori-d/safety/adapter
@@ -82,7 +86,7 @@ model_archive=/path/to/your/lori-d/safety/adapter
 
 ### For LoRI-S:
 
-Before running the scripts, set `model_archive` to the path of your `LoRI-S` safety adapter and set `mask_path` to the path of the sparse mask for the downstream task. Alternatively, you can use the [LoRI-S safety adapter](https://huggingface.co/tomg-group-umd/LoRI-S_safety_llama3_rank_32) and the corresponding [sparse mask](https://huggingface.co/tomg-group-umd/LoRI-D_code_llama3_rank_32/tree/main/masks) from our HuggingFace collection.
+Before running the scripts, set `model_archive` to the path of your `LoRI-S` safety adapter and set `mask_path` to the path of the sparse mask for the downstream task. Alternatively, you can use the [safety adapter](https://huggingface.co/tomg-group-umd/LoRI-S_safety_llama3_rank_32) and the corresponding [sparse mask](https://huggingface.co/tomg-group-umd/LoRI-D_code_llama3_rank_32/tree/main/masks) from our HuggingFace collection.
 
 ```
 model_archive=/path/to/your/lori-s/safety/adapter
