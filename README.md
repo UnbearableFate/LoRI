@@ -7,7 +7,7 @@
 LoRI (LoRA with Reduced Interference) is a simple yet effective variant of LoRA for fine-tuning LLMs. It freezes the projection matrices `A` as random projections and sparsifies `B` using task-specific masks. LoRI significantly reduces the number of trainable parameters, preserves single-task performance, and minimizes cross-task interference during adapter merging and continual learning.
 
 <div align="center">
-    <img src="./LoRI.png" alt="LoRI" width="75%">
+    <img src="./LoRI.png" alt="LoRI" width="80%">
 </div>
 
 ## Installation
