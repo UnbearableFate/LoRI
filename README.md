@@ -57,7 +57,7 @@ adapter = PeftModel.from_pretrained(base_model, "tomg-group-umd/LoRI-S_code_llam
 tokenizer = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B")
 ```
 
-Adapters are provided for code, math, NLU, and safety tasks, for `LoRI-D` and `LoRI-S`, using LLaMA-3-8B and Mistral-7B models at ranks 32 and 64. 
+`LoRI-D` and `LoRI-S` adapters are provided for code, math, NLU, and safety tasks, using LLaMA-3-8B and Mistral-7B models at ranks 32 and 64. 
 
 ## Adapter Merging
 
