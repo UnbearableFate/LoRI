@@ -457,12 +457,18 @@ class BasicTrainer(object):
             
             #### BEGIN SAVING ####
             if self.config.use_val_loss and self.example_counter >= next_save:
+                if type(self.config.save_every) == str and self.config.save_every.startswith('epoch'):
+                    output_dir = os.path.join(self.run_dir, f'epoch-{self.example_counter // n_examples_per_epoch}')
+                    next_save += n_examples_per_epoch * epoch_freq
+                else:
+                    output_dir = os.path.join(self.run_dir, f'step-{self.batch_counter}')
+                    next_save += self.config.save_every
                 output_dir = os.path.join(self.run_dir, f'step-{best_batch_counter}')
                 rank0_print(f'creating checkpoint to write to {output_dir}...')
                 os.makedirs(output_dir, exist_ok=True)
-                if self.rank == 0:
+                if self.rank == 0 and policy_state_dict is not None:
                     self.policy.save_pretrained(output_dir, state_dict=policy_state_dict)
-                del policy_state_dict
+                    policy_state_dict = None
                 dist.barrier()
         
             elif self.example_counter >= next_save:
