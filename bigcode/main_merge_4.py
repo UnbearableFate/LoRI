@@ -408,15 +408,15 @@ def main():
                     for sub_key, sub_value in value.items():
                         print(f"  {sub_key}: {sub_value}")
                         
-        os.makedirs(os.path.join(args.metric_output_path, "results"), exist_ok=True)
-        with open(f"{args.metric_output_path}/results/merge_4_loras.txt", "a") as f:
-            f.write(f"Model: {results['config']['peft_model']}\n")
-            f.write(f"Combination_type: {results['config']['combination_type']}, density: {results['config']['density']}, weights: {results['config']['weights']}\n")
-            for key, value in results.items():
-                if key != "config":
-                    f.write(f"{key}:\n")
-                    for sub_key, sub_value in value.items():
-                        f.write(f"  {sub_key}: {sub_value}\n")
+            os.makedirs(os.path.join(args.metric_output_path, "results"), exist_ok=True)
+            with open(f"{args.metric_output_path}/results/merge_4_loras.txt", "a") as f:
+                f.write(f"Model: {results['config']['peft_model']}\n")
+                f.write(f"Combination_type: {results['config']['combination_type']}, density: {results['config']['density']}, weights: {results['config']['weights']}\n")
+                for key, value in results.items():
+                    if key != "config":
+                        f.write(f"{key}:\n")
+                        for sub_key, sub_value in value.items():
+                            f.write(f"  {sub_key}: {sub_value}\n")
                         
 
 if __name__ == "__main__":
