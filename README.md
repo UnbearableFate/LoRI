@@ -2,7 +2,7 @@
 
 [Juzheng Zhang](https://juzhengz.github.io/), [Jiacheng You](https://github.com/YouJiacheng), [Ashwinee Panda](https://kiddyboots216.github.io/), [Tom Goldstein](https://www.cs.umd.edu/~tomg/)
 
-📄 [Paper](https://arxiv.org/abs/2504.07448) | 💻 [Code](https://github.com/juzhengz/LoRI/) | 🤗 [HuggingFace](https://huggingface.co/collections/tomg-group-umd/lori-adapters-67f795549d792613e1290011)
+📄 [Paper](https://arxiv.org/abs/2504.07448) | 💻 [Code](https://github.com/juzhengz/LoRI/) | 🤗 [HuggingFace](https://huggingface.co/collections/tomg-group-umd/lori-adapters-67f795549d792613e1290011) | COLM 2025
 
 LoRI (LoRA with Reduced Interference) is a simple yet effective variant of LoRA for fine-tuning LLMs. It freezes the projection matrices `A` as random projections and sparsifies `B` using task-specific masks. LoRI significantly reduces the number of trainable parameters, preserves single-task performance, and minimizes cross-task interference during adapter merging and continual learning.
 
